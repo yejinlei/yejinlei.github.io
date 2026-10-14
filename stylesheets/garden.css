@@ -1,0 +1,470 @@
+/*******************************************************************************
+秘密花园 · 中国风(月夜园林)主题
+by yejinlei
+*******************************************************************************/
+
+/*-------------------------------------------------------------------------------
+  变量
+-------------------------------------------------------------------------------*/
+:root {
+  --night-1: #0e1830;
+  --night-2: #16244a;
+  --night-3: #20325e;
+  --paper: #f5efe0;
+  --paper-dark: #e9e0c8;
+  --ink: #2c3440;
+  --ink-dim: #6a7180;
+  --cinnabar: #b03a2e;
+  --gold: #c9a44c;
+  --jade: #4a7c59;
+  --moon: #f5e8c4;
+  --text: #e6dfc8;
+  --text-dim: #a39b83;
+  --serif: "Ma Shan Zheng", "KaiTi", "STKaiti", "楷体", "SimSun", serif;
+}
+
+/*-------------------------------------------------------------------------------
+  基础
+-------------------------------------------------------------------------------*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--serif);
+  color: var(--text);
+  background: linear-gradient(180deg, var(--night-1) 0%, var(--night-2) 55%, var(--night-3) 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--moon);
+}
+
+/*-------------------------------------------------------------------------------
+  夜空:三层星空(视差漂移 + 闪烁)
+-------------------------------------------------------------------------------*/
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: repeat;
+  z-index: 0;
+}
+
+.stars-far {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 250, 230, .85), transparent),
+    radial-gradient(1px 1px at 60px 90px, rgba(255, 250, 230, .55), transparent),
+    radial-gradient(1px 1px at 110px 40px, rgba(255, 250, 230, .75), transparent),
+    radial-gradient(1px 1px at 150px 120px, rgba(201, 164, 76, .8), transparent),
+    radial-gradient(1px 1px at 190px 70px, rgba(255, 250, 230, .5), transparent),
+    radial-gradient(1px 1px at 90px 160px, rgba(245, 232, 196, .7), transparent),
+    radial-gradient(1px 1px at 30px 190px, rgba(255, 250, 230, .65), transparent),
+    radial-gradient(1px 1px at 170px 20px, rgba(255, 250, 230, .4), transparent);
+  background-size: 220px 220px;
+  animation: drift 260s linear infinite, twinkle 5s ease-in-out infinite;
+}
+
+.stars-mid {
+  background-image:
+    radial-gradient(1.5px 1.5px at 40px 60px, rgba(255, 250, 230, .95), transparent),
+    radial-gradient(1.5px 1.5px at 140px 180px, rgba(201, 164, 76, .85), transparent),
+    radial-gradient(1.5px 1.5px at 240px 100px, rgba(255, 250, 230, .7), transparent),
+    radial-gradient(1.5px 1.5px at 320px 220px, rgba(245, 232, 196, .85), transparent),
+    radial-gradient(1.5px 1.5px at 200px 30px, rgba(255, 250, 230, .6), transparent),
+    radial-gradient(1.5px 1.5px at 360px 150px, rgba(255, 250, 230, .5), transparent);
+  background-size: 420px 420px;
+  animation: drift 170s linear infinite, twinkle 4s ease-in-out infinite 1s;
+}
+
+.stars-near {
+  background-image:
+    radial-gradient(2px 2px at 80px 100px, rgba(255, 252, 240, .95), transparent),
+    radial-gradient(2px 2px at 300px 260px, rgba(201, 164, 76, .9), transparent),
+    radial-gradient(2.5px 2.5px at 520px 80px, rgba(255, 252, 240, .9), transparent),
+    radial-gradient(2px 2px at 200px 400px, rgba(245, 232, 196, .9), transparent),
+    radial-gradient(2px 2px at 640px 320px, rgba(255, 252, 240, .85), transparent),
+    radial-gradient(2px 2px at 420px 520px, rgba(201, 164, 76, .8), transparent);
+  background-size: 700px 700px;
+  animation: drift 110s linear infinite, twinkle 3.5s ease-in-out infinite 2s;
+}
+
+@keyframes drift {
+  from { background-position: 0 0; }
+  to   { background-position: 1000px 500px; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .35; }
+}
+
+/*-------------------------------------------------------------------------------
+  明月
+-------------------------------------------------------------------------------*/
+.moon {
+  position: fixed;
+  top: 7%;
+  right: 9%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%, #fffaf0 0%, var(--moon) 55%, #e3d0a2 100%);
+  box-shadow:
+    0 0 50px 16px rgba(245, 232, 196, .35),
+    0 0 120px 60px rgba(245, 232, 196, .14);
+  z-index: 0;
+  pointer-events: none;
+  animation: moon-glow 9s ease-in-out infinite;
+}
+
+/* 月面上的淡淡阴影,仿蟾宫桂树 */
+.moon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 62% 58%, rgba(180, 158, 108, .35) 0 12%, transparent 22%),
+    radial-gradient(circle at 40% 68%, rgba(180, 158, 108, .3) 0 8%, transparent 16%),
+    radial-gradient(circle at 55% 30%, rgba(180, 158, 108, .25) 0 6%, transparent 13%);
+}
+
+@keyframes moon-glow {
+  0%, 100% { box-shadow: 0 0 50px 16px rgba(245, 232, 196, .35), 0 0 120px 60px rgba(245, 232, 196, .14); }
+  50%      { box-shadow: 0 0 60px 22px rgba(245, 232, 196, .45), 0 0 140px 70px rgba(245, 232, 196, .2); }
+}
+
+/*-------------------------------------------------------------------------------
+  HERO
+-------------------------------------------------------------------------------*/
+.hero {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 110px 16px 52px;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 10px;
+  text-indent: 10px; /* 补偿末字间距,视觉居中 */
+  color: var(--gold);
+  border: 1px solid rgba(201, 164, 76, .55);
+  padding: 8px 22px;
+  margin-bottom: 40px;
+  background: rgba(201, 164, 76, .07);
+}
+
+.hero-title {
+  font-size: clamp(64px, 14vw, 132px);
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--moon);
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, .5),
+    0 0 46px rgba(245, 232, 196, .35);
+}
+
+/* 朱砂印章 */
+.seal {
+  display: inline-block;
+  width: .62em;
+  height: .62em;
+  line-height: .62em;
+  margin-left: .18em;
+  font-size: .5em;
+  letter-spacing: 0;
+  text-align: center;
+  color: #fff;
+  background: var(--cinnabar);
+  border-radius: .08em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .45), inset 0 0 6px rgba(255, 255, 255, .25);
+  transform: rotate(4deg) translateY(-.28em);
+  text-shadow: none;
+}
+
+.subtitle {
+  margin-top: 22px;
+  font-size: clamp(12px, 2vw, 15px);
+  font-family: "Courier New", monospace;
+  letter-spacing: 9px;
+  color: var(--gold);
+  opacity: .85;
+}
+
+.intro {
+  margin-top: 30px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+}
+
+.intro strong {
+  color: var(--moon);
+  font-weight: 700;
+}
+
+/*-------------------------------------------------------------------------------
+  卷轴跑马灯
+-------------------------------------------------------------------------------*/
+.marquee {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 30px 0 0;
+  padding: 12px 0;
+  font-size: 15px;
+  letter-spacing: 3px;
+  color: var(--moon);
+  border-top: 1px solid rgba(201, 164, 76, .45);
+  border-bottom: 1px solid rgba(201, 164, 76, .45);
+  background: rgba(14, 24, 48, .6);
+}
+
+/*-------------------------------------------------------------------------------
+  内容区
+-------------------------------------------------------------------------------*/
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 20px 32px;
+}
+
+section {
+  margin-bottom: 88px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: clamp(22px, 4vw, 30px);
+  letter-spacing: 6px;
+  margin-bottom: 44px;
+}
+
+/* 标题两侧饰线 */
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 164, 76, .55), transparent);
+}
+
+.section-title span {
+  flex-shrink: 0;
+  padding: 8px 30px;
+  color: var(--moon);
+  border: 1px solid rgba(201, 164, 76, .55);
+  background: rgba(201, 164, 76, .08);
+  box-shadow: inset 0 0 18px rgba(201, 164, 76, .1);
+}
+
+/*-------------------------------------------------------------------------------
+  卡片画廊(宣纸卡片)
+-------------------------------------------------------------------------------*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 26px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--paper-dark);
+  border-radius: 4px;
+  background:
+    repeating-linear-gradient(0deg, rgba(44, 52, 64, .015) 0 2px, transparent 2px 4px),
+    var(--paper);
+  color: var(--ink);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--cinnabar);
+  color: var(--ink);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .5), 0 0 0 1px var(--cinnabar);
+}
+
+/* 主打卡片:红楼未完,占两列,朱砂左边框 */
+.card-featured {
+  grid-column: span 2;
+  border-left: 4px solid var(--cinnabar);
+}
+
+/* 卡角竖排印章 */
+.card-seal {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  writing-mode: vertical-rl;
+  padding: 8px 5px;
+  font-size: 13px;
+  letter-spacing: 5px;
+  color: #fff;
+  background: var(--cinnabar);
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+}
+
+/* 翡翠印章变体 */
+.card-seal-jade {
+  background: var(--jade);
+}
+
+.card-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--paper-dark);
+}
+
+.card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.card:hover .card-cover img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 18px 20px 20px;
+}
+
+.card-body h3 {
+  font-size: 21px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+
+.card-body h3::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  margin-top: 8px;
+  background: var(--cinnabar);
+  opacity: .75;
+}
+
+.card-body p {
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: 1px;
+  color: var(--ink-dim);
+  margin-bottom: 14px;
+}
+
+/* 标签:小玉牌 */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 3px 12px;
+  color: var(--jade);
+  border: 1px solid rgba(74, 124, 89, .55);
+  border-radius: 3px;
+  background: rgba(74, 124, 89, .07);
+}
+
+/*-------------------------------------------------------------------------------
+  云纹装饰带
+-------------------------------------------------------------------------------*/
+.cloud-band {
+  position: relative;
+  z-index: 1;
+  height: 34px;
+  margin-top: 48px;
+  background-image: radial-gradient(circle at 18px 34px, rgba(201, 164, 76, .4) 12px, transparent 13px);
+  background-size: 36px 34px;
+  background-repeat: repeat-x;
+  opacity: .8;
+}
+
+/*-------------------------------------------------------------------------------
+  页脚
+-------------------------------------------------------------------------------*/
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 30px 16px 46px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  background: rgba(14, 24, 48, .6);
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer-line {
+  color: var(--moon);
+}
+
+.footer .retro-note {
+  font-size: 12px;
+  letter-spacing: 4px;
+  opacity: .7;
+}
+
+/*-------------------------------------------------------------------------------
+  响应式
+-------------------------------------------------------------------------------*/
+@media (max-width: 640px) {
+  .card-featured {
+    grid-column: span 1;
+  }
+
+  .hero {
+    padding: 76px 16px 40px;
+  }
+
+  .badge {
+    letter-spacing: 6px;
+    text-indent: 6px;
+  }
+
+  .moon {
+    width: 84px;
+    height: 84px;
+    top: 5%;
+    right: 6%;
+  }
+}

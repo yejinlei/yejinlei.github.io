@@ -2,59 +2,205 @@
 <html lang="zh-cn">
 
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="yejinlei有关博客 - Github.io : yejinlei有关博客">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="yejinlei的秘密花园 - 作品集与个人小站">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/garden.css">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-      <!-- Bootstrap -->
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <title>yejinlei个人博客 - Github.io</title>
+    <title>秘密花园 · yejinlei 的数字园林</title>
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/yejinlei">View on GitHub</a>
+    <!-- 夜空背景层(纯 CSS):星空 + 明月 -->
+    <div class="stars stars-far" aria-hidden="true"></div>
+    <div class="stars stars-mid" aria-hidden="true"></div>
+    <div class="stars stars-near" aria-hidden="true"></div>
+    <div class="moon" aria-hidden="true"></div>
 
-          <h1 id="project_title">yejinlei个人博客 - Github.io</h1>
-          <h2 id="project_tagline">yejinlei's 兴趣爱好、工作学习</h2>
+    <!-- HERO -->
+    <header class="hero">
+      <p class="badge">欢 迎 光 临</p>
+      <h1 class="hero-title">秘密花园<span class="seal">秘</span></h1>
+      <p class="subtitle">S E C R E T &nbsp; G A R D E N</p>
+      <p class="intro">这里是 <strong>yejinlei</strong> 的网络自留地,种一些代码,也种一些闲笔。</p>
+    </header>
 
-        </header>
-    </div>
+    <!-- 卷轴跑马灯 -->
+    <marquee class="marquee" scrollamount="5">
+      ✿ 欢迎来到秘密花园,请随意参观 ✿ 今夜星光灿烂 ✿ 本站常年修缮,花开不败 ✿ 红楼未完,西游正酣 ✿ 欢迎来到秘密花园,请随意参观 ✿ 今夜星光灿烂 ✿ 本站常年修缮,花开不败 ✿ 红楼未完,西游正酣 ✿
+    </marquee>
 
     <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="yejinleigithubio" class="anchor" href="#yejinleigithubio" aria-hidden="true"><span class="octicon octicon-link"></span></a>yejinlei.github.io</h1>
+    <main class="container">
 
-<p>yejinlei's about web</p>
+      <!-- 兴趣爱好 -->
+      <section id="life">
+        <h2 class="section-title"><span>园中珍藏 · 兴趣爱好</span></h2>
+
+        <div class="cards">
+
+          <a class="card card-featured" href="https://yejinlei.github.io/The-Story-of-the-Stone/qing.html" target="_blank" rel="noopener">
+            <span class="card-seal">镇园之宝</span>
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=traditional%20Chinese%20ink%20painting%2C%20classical%20Jiangnan%20garden%20at%20night%2C%20glowing%20red%20lanterns%2C%20moonlit%20pavilion%20and%20taihu%20rocks%2C%20falling%20flower%20petals%2C%20guohua%20watercolor%20style%2C%20elegant&image_size=landscape_16_9" alt="红楼未完">
+            </div>
+            <div class="card-body">
+              <h3>红楼未完</h3>
+              <p>满纸荒唐言,一把辛酸泪。一座红楼梦主题小站,安放我对红楼的痴与考据。</p>
+              <div class="tags"><span>红楼梦</span><span>文学</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://kids-games.fly.dev/" target="_blank" rel="noopener">
+            <span class="card-seal card-seal-jade">童心</span>
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20painting%20of%20a%20father%20and%20young%20son%20playing%20together%20with%20a%20paper%20pinwheel%20and%20a%20kite%2C%20warm%20lantern%20glow%20at%20dusk%2C%20joyful%2C%20indigo%20and%20gold%20tones&image_size=landscape_16_9" alt="辉辉游戏屋">
+            </div>
+            <div class="card-body">
+              <h3>辉辉游戏屋</h3>
+              <p>和儿子辉辉一起开发的小游戏合集。最好的游戏引擎,是陪他长大的时光。</p>
+              <div class="tags"><span>亲子</span><span>游戏</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/the-journey-to-the-west/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=traditional%20Chinese%20ink%20painting%2C%20Monkey%20King%20with%20golden%20staff%20standing%20on%20swirling%20clouds%20above%20mountains%2C%20guohua%20watercolor%20style&image_size=landscape_16_9" alt="西游释厄">
+            </div>
+            <div class="card-body">
+              <h3>西游释厄</h3>
+              <p>《西游记》古籍数字化:本体论 + 多 Agent + DuckDB-WASM 知识图谱。</p>
+              <div class="tags"><span>西游记</span><span>知识图谱</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/nobel-kg/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=golden%20medal%20above%20a%20glowing%20constellation%20network%20of%20connected%20stars%2C%20dark%20indigo%20night%20sky%2C%20East%20Asian%20painting%20style%20with%20gold%20leaf%20accents&image_size=landscape_16_9" alt="诺奖图谱">
+            </div>
+            <div class="card-body">
+              <h3>诺奖图谱</h3>
+              <p>把诺贝尔奖得主们连成一张网,看看星星与星星之间如何相连。</p>
+              <div class="tags"><span>知识图谱</span><span>数据</span></div>
+            </div>
+          </a>
+
+        </div>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+      <!-- 技术作品 -->
+      <section id="lab">
+        <h2 class="section-title"><span>格物致知 · 技术作品</span></h2>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <!-- d3.js -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
+        <div class="cards">
+
+          <a class="card" href="https://yejinlei.github.io/ThreeJSAssetManager/AIEdit/index.html" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20painting%20of%20geometric%20mountains%20made%20of%20wireframe%20lines%2C%20indigo%20and%20gold%2C%20minimal&image_size=landscape_16_9" alt="ThreeJSAssetManager">
+            </div>
+            <div class="card-body">
+              <h3>ThreeJS Asset Manager</h3>
+              <p>基于 Three.js 的配置化 3D 开发框架,用配置文件而非代码搭场景。</p>
+              <div class="tags"><span>Three.js</span><span>3D</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/agent-netx/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20style%20illustration%20of%20a%20small%20mechanical%20wooden%20automaton%20reading%20scrolls%2C%20indigo%20and%20cinnabar%20accents&image_size=landscape_16_9" alt="agent-netx">
+            </div>
+            <div class="card-body">
+              <h3>agent-netx</h3>
+              <p>轻量网络代理客户端 + LLM Agent TUI:SSH 传输 / 记忆 / 人工介入。</p>
+              <div class="tags"><span>Agent</span><span>网络</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/agent-nexus/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20illustration%20of%20interconnected%20brass%20gears%20and%20a%20mechanical%20loom%2C%20gold%20and%20indigo&image_size=landscape_16_9" alt="agent-nexus">
+            </div>
+            <div class="card-body">
+              <h3>agent-nexus</h3>
+              <p>AI Agent 配置自动化工具。</p>
+              <div class="tags"><span>Agent</span><span>自动化</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/agent-proxy/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20painting%20of%20a%20round%20moon%20gate%20in%20a%20garden%20wall%20with%20flowing%20light%20streams%2C%20indigo%20and%20gold&image_size=landscape_16_9" alt="agent-proxy">
+            </div>
+            <div class="card-body">
+              <h3>agent-proxy</h3>
+              <p>AI Agent 消息协议网关。</p>
+              <div class="tags"><span>Agent</span><span>网关</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/agent-psychics/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20painting%20of%20a%20crystal%20ball%20on%20a%20carved%20wooden%20stand%20with%20swirling%20mist%2C%20indigo%20and%20cinnabar&image_size=landscape_16_9" alt="agent-psychics">
+            </div>
+            <div class="card-body">
+              <h3>agent-psychics</h3>
+              <p>一次关于 Agent 的演示实验。</p>
+              <div class="tags"><span>Agent</span><span>Demo</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/agent-textbook/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20painting%20of%20an%20open%20thread-bound%20book%20with%20glowing%20characters%20floating%20out%2C%20indigo%20and%20gold&image_size=landscape_16_9" alt="agent-textbook">
+            </div>
+            <div class="card-body">
+              <h3>agent-textbook</h3>
+              <p>关于 Agent 的教科书式整理。</p>
+              <div class="tags"><span>Agent</span><span>笔记</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/hello-langs/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20painting%20of%20floating%20oracle%20bone%20script%20characters%20and%20symbols%2C%20indigo%20and%20gold&image_size=landscape_16_9" alt="hello-langs">
+            </div>
+            <div class="card-body">
+              <h3>hello-langs</h3>
+              <p>♨ Hello,编程语言们。</p>
+              <div class="tags"><span>编程语言</span></div>
+            </div>
+          </a>
+
+          <a class="card" href="https://yejinlei.github.io/jykj-ocr/" target="_blank" rel="noopener">
+            <div class="card-cover">
+              <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Chinese%20ink%20wash%20painting%20of%20a%20magnifying%20glass%20over%20a%20bamboo%20scroll%20with%20glowing%20characters%2C%20indigo%20and%20cinnabar&image_size=landscape_16_9" alt="jykj-ocr">
+            </div>
+            <div class="card-body">
+              <h3>jykj-ocr</h3>
+              <p>OCR 服务,集成多种 OCR 引擎与使用策略。</p>
+              <div class="tags"><span>OCR</span><span>服务</span></div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 云纹装饰带 -->
+    <div class="cloud-band" aria-hidden="true"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="footer-line">© 2026 yejinlei · 园由 GitHub Pages 灌溉</p>
+      <p>
+        <a href="https://github.com/yejinlei" target="_blank" rel="noopener">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://yejinlei.github.io/">首页</a>
+      </p>
+      <p class="retro-note">数字园林 · 常年修缮中</p>
+    </footer>
+
   </body>
 </html>
