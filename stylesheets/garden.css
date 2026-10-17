@@ -337,6 +337,31 @@ section {
   background: var(--jade);
 }
 
+/* 通栏主卡:单独一区的大卡 */
+.card-solo {
+  grid-column: 1 / -1;
+  border-left: 4px solid var(--jade);
+}
+
+/* 金色印章变体(待续) */
+.card-seal-gold {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* 虚位以待占位卡 */
+.card-placeholder {
+  opacity: .55;
+  border-style: dashed;
+  cursor: default;
+}
+
+.card-placeholder:hover {
+  transform: none;
+  border-color: var(--paper-dark);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .35);
+}
+
 .card-cover {
   position: relative;
   aspect-ratio: 16 / 9;
