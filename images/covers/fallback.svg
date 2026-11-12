@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#f1f5f9"/>
+  <g transform="translate(400,225)" fill="#cbd5e1">
+    <rect x="-60" y="-40" width="120" height="80" fill="none" stroke="#cbd5e1" stroke-width="4"/>
+    <polygon points="-40,-10 -10,-30 20,-10 50,-30 50,20 -40,20" fill="#e2e8f0"/>
+    <circle cx="30" cy="0" r="8" fill="#fbbf24"/>
+  </g>
+  <text x="400" y="300" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" fill="#94a3b8">图片加载中…</text>
+</svg>

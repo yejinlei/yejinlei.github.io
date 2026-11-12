@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- 靛蓝夜色背景 -->
+  <rect width="64" height="64" fill="#0f172a" rx="8"/>
+  <!-- 弯月 -->
+  <path d="M42 16 A18 18 0 1 0 42 48 A14 14 0 1 1 42 16 Z" fill="#fef3c7"/>
+  <!-- 朱砂印章 -->
+  <rect x="16" y="40" width="14" height="14" fill="#dc2626" rx="1"/>
+  <text x="23" y="51" font-family="serif" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">园</text>
+  <!-- 星点 -->
+  <circle cx="50" cy="12" r="1" fill="#fbbf24"/>
+  <circle cx="12" cy="18" r="0.8" fill="#fbbf24"/>
+  <circle cx="52" cy="32" r="0.6" fill="#fbbf24"/>
+</svg>
